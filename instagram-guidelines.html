@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Marketing Guidelines | Veer & Sant</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #2d3748;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
+        }
+
+        .chart-container {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #e2e8f0;
+            background: white;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: #f7fafc;
+            transition: background 0.2s;
+        }
+
+        .best-practices {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .practice-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 25px;
+            border-radius: 16px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .practice-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .practice-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .practice-desc {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #f59e0b;
+            margin: 30px 0;
+        }
+
+        .highlight strong {
+            color: #d97706;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            background: #f7fafc;
+            padding: 30px 40px;
+            text-align: center;
+            color: #718096;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            th, td {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📱 Instagram Marketing Guidelines</h1>
+            <p>Best Practices for Veer & Sant Team | Marketing Department</p>
+        </div>
+
+        <div class="content">
+            <!-- Posting Schedule Section -->
+            <div class="section">
+                <h2 class="section-title">⏰ Optimal Posting Times</h2>
+                <div class="chart-container">
+                    <h3 style="margin-bottom: 20px; color: #4a5568;">Daily Engagement Peaks (Dubai Time)</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="postingTimesChart"></canvas>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time Slot</th>
+                            <th>Dubai Time</th>
+                            <th>Target Audience</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>❌ Morning</td>
+                            <td>7:00 - 8:00 AM</td>
+                            <td>Local</td>
+                            <td><strong style="color: #dc2626;">Avoid</strong></td>
+                        </tr>
+                        <tr>
+                            <td>✅ Lunch Peak</td>
+                            <td>12:00 PM</td>
+                            <td>Dubai & GCC</td>
+                            <td><strong style="color: #059669;">Recommended</strong></td>
+                        </tr>
+                        <tr>
+                            <td>✅ Evening Peak</td>
+                            <td>8:00 - 9:00 PM</td>
+                            <td>Global Audience</td>
+                            <td><strong style="color: #059669;">Recommended</strong></td>
+                        </tr>
+                        <tr>
+                            <td>🌍 International</td>
+                            <td>Adjust per region</td>
+                            <td>US, UK, India</td>
+                            <td><strong style="color: #2563eb;">Customize</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Content Strategy Section -->
+            <div class="section">
+                <h2 class="section-title">📸 Content Mix Strategy</h2>
+                <div class="chart-container">
+                    <h3 style="margin-bottom: 20px; color: #4a5568;">Recommended Content Distribution</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="contentMixChart"></canvas>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Content Type</th>
+                            <th>Purpose</th>
+                            <th>Frequency</th>
+                            <th>Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🎬 Reels</td>
+                            <td>Reach & Discovery</td>
+                            <td>3-4 per week</td>
+                            <td><strong style="color: #059669;">High</strong></td>
+                        </tr>
+                        <tr>
+                            <td>📱 Single Posts</td>
+                            <td>Brand Identity</td>
+                            <td>2-3 per week</td>
+                            <td><strong style="color: #2563eb;">Medium</strong></td>
+                        </tr>
+                        <tr>
+                            <td>🖼️ Carousels</td>
+                            <td>Education & Value</td>
+                            <td>2-3 per week</td>
+                            <td><strong style="color: #059669;">High</strong></td>
+                        </tr>
+                        <tr>
+                            <td>👤 Personal Content</td>
+                            <td>Trust & Connection</td>
+                            <td>1-2 per week</td>
+                            <td><strong style="color: #d97706;">Very High</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Caption Strategy -->
+            <div class="section">
+                <h2 class="section-title">✍️ Caption Best Practices</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Guideline</th>
+                            <th>Real Example (Veer & Sant)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hook + Keywords</strong></td>
+                            <td>First line grabs attention with natural keywords</td>
+                            <td>"DAMAC Islands Phase 2 just released payment plans that UK investors are rushing to secure. Here's what the numbers actually show..."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Value Statement</strong></td>
+                            <td>Tell them what they'll learn</td>
+                            <td>"We analyzed 6 months of Hudayriyat Island price data. The appreciation rate surprised even us at 18% - here's the breakdown by unit type."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Personal Angle</strong></td>
+                            <td>Share real experience or client story</td>
+                            <td>"A client from Mumbai called me yesterday asking if The Oasis handover delays affect ROI. I pulled the actual rental data from similar projects..."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Question Hook</strong></td>
+                            <td>Ask what they're thinking</td>
+                            <td>"Why are Indian investors choosing Dubai Marina over Downtown in 2025? I spent 3 hours at both locations last week. The rental yield gap is wider than you think."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hashtags</strong></td>
+                            <td>Maximum 3, specific to audience</td>
+                            <td>#DubaiPropertyInvestment #UKInvestors #DAMACIslands</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Call-to-Action</strong></td>
+                            <td>Specific, low-friction next step</td>
+                            <td>"Send me 'Payment Plan' and I'll share the complete breakdown for this project" OR "Comment your budget range below"</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight">
+                    <strong>⚠️ Important:</strong> Some accounts now limit hashtags. Keep it to 3 maximum for better reach and to avoid restrictions.
+                </div>
+
+                <div style="background: #e0e7ff; padding: 25px; border-radius: 12px; margin-top: 30px; border-left: 5px solid #667eea;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">❌ Avoid These Clichés:</h3>
+                    <ul style="color: #4a5568; line-height: 1.8; padding-left: 20px;">
+                        <li>"Your dream home awaits" - Everyone says this</li>
+                        <li>"Luxury living redefined" - Meaningless filler</li>
+                        <li>"Don't miss out" - Creates no urgency</li>
+                        <li>"Contact us today" - Too vague</li>
+                        <li>"Prime location" - Without specifics, it's noise</li>
+                    </ul>
+                </div>
+
+                <div style="background: #d1fae5; padding: 25px; border-radius: 12px; margin-top: 20px; border-left: 5px solid #059669;">
+                    <h3 style="color: #059669; margin-bottom: 15px;">✅ What Works Instead:</h3>
+                    <ul style="color: #4a5568; line-height: 1.8; padding-left: 20px;">
+                        <li>Specific numbers: "23% rental yield in Q3" vs "great returns"</li>
+                        <li>Real situations: "Client from London closed this in 48 hours"</li>
+                        <li>Comparisons: "This vs Dubai Marina - same budget, different outcomes"</li>
+                        <li>Behind-the-scenes: "Site visit at 6 AM showed me something unexpected"</li>
+                        <li>Honest takes: "Here's what the developer won't tell you about handover dates"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Performance Tracking -->
+            <div class="section">
+                <h2 class="section-title">📊 Performance Analysis Checklist</h2>
+                
+                <div class="best-practices">
+                    <div class="practice-card">
+                        <div class="emoji">📈</div>
+                        <div class="practice-title">Review Insights Weekly</div>
+                        <div class="practice-desc">Check which content performs best and analyze patterns</div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <div class="emoji">👥</div>
+                        <div class="practice-title">Track Demographics</div>
+                        <div class="practice-desc">Identify age groups, cities, and countries engaging most</div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <div class="emoji">💡</div>
+                        <div class="practice-title">Content Angles</div>
+                        <div class="practice-desc">Take successful topics and explore from different perspectives</div>
+                    </div>
+                    
+                    <div class="practice-card">
+                        <div class="emoji">🔄</div>
+                        <div class="practice-title">Repurpose Winners</div>
+                        <div class="practice-desc">Recreate high-performing content in new formats</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Two Pillars -->
+            <div class="section">
+                <h2 class="section-title">🎯 The Two Pillars of Success</h2>
+                
+                <div class="best-practices">
+                    <div class="practice-card" style="border-left-color: #d97706;">
+                        <div class="practice-number">1</div>
+                        <div class="practice-title">Content is King</div>
+                        <div class="practice-desc">Create valuable content that solves problems, educates, or inspires your audience. Quality over quantity always wins.</div>
+                    </div>
+                    
+                    <div class="practice-card" style="border-left-color: #059669;">
+                        <div class="practice-number">2</div>
+                        <div class="practice-title">Consistency Wins</div>
+                        <div class="practice-desc">Post 2 times per week minimum. Continue for 3-4 months. Inconsistent posting (active for 1 month, then 2 months gap) doesn't work.</div>
+                    </div>
+                </div>
+
+                <div class="highlight" style="margin-top: 30px;">
+                    <strong>🤝 Collaboration Rule:</strong> Both parties must be consistent for collaborations to work. If one person doesn't engage, Instagram may not recognize it as valuable content and block visibility.
+                </div>
+            </div>
+
+            <!-- What NOT to Do -->
+            <div class="section">
+                <h2 class="section-title">⛔ Common Mistakes to Avoid</h2>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mistake</th>
+                            <th>Impact</th>
+                            <th>Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>❌ Posting at 7-8 AM</td>
+                            <td>Low engagement</td>
+                            <td>Switch to 12 PM or 8-9 PM</td>
+                        </tr>
+                        <tr>
+                            <td>❌ Only posting Reels</td>
+                            <td>Limited brand building</td>
+                            <td>Mix Reels, posts, carousels, personal content</td>
+                        </tr>
+                        <tr>
+                            <td>❌ Sporadic posting</td>
+                            <td>Algorithm penalization</td>
+                            <td>Maintain 2x/week for 3-4 months minimum</td>
+                        </tr>
+                        <tr>
+                            <td>❌ Too many hashtags</td>
+                            <td>Possible restrictions</td>
+                            <td>Use maximum 3 relevant hashtags</td>
+                        </tr>
+                        <tr>
+                            <td>❌ Ignoring insights</td>
+                            <td>Missed opportunities</td>
+                            <td>Weekly review of performance data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Marketing Team | Veer & Sant Real Estate</strong></p>
+            <p style="margin-top: 10px; opacity: 0.8;">Prepared by Omid Za - Head of Marketing</p>
+        </div>
+    </div>
+
+    <script>
+        // Posting Times Chart
+        const ctxTimes = document.getElementById('postingTimesChart').getContext('2d');
+        new Chart(ctxTimes, {
+            type: 'line',
+            data: {
+                labels: ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM', '10 PM'],
+                datasets: [{
+                    label: 'Engagement Rate (%)',
+                    data: [15, 18, 20, 25, 35, 50, 85, 70, 55, 45, 40, 50, 65, 75, 90, 88, 70],
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#667eea',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Content Mix Chart
+        const ctxMix = document.getElementById('contentMixChart').getContext('2d');
+        new Chart(ctxMix, {
+            type: 'doughnut',
+            data: {
+                labels: ['Reels', 'Single Posts', 'Carousels', 'Personal Content'],
+                datasets: [{
+                    data: [35, 25, 25, 15],
+                    backgroundColor: [
+                        '#667eea',
+                        '#764ba2',
+                        '#f59e0b',
+                        '#059669'
+                    ],
+                    borderWidth: 3,
+                    borderColor: '#fff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
