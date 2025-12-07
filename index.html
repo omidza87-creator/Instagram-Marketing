@@ -181,22 +181,125 @@
             margin-right: 10px;
         }
 
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 30px;
+        }
+
         @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                border-radius: 16px;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
             .header h1 {
-                font-size: 2rem;
+                font-size: 1.75rem;
+                line-height: 1.2;
+            }
+
+            .header p {
+                font-size: 0.95rem;
             }
             
             .content {
                 padding: 30px 20px;
             }
 
+            .section {
+                margin-bottom: 40px;
+            }
+
             .section-title {
+                font-size: 1.4rem;
+                margin-bottom: 20px;
+            }
+
+            .chart-container {
+                padding: 20px 15px;
+            }
+
+            .chart-container h3 {
+                font-size: 1rem;
+            }
+
+            .chart-wrapper {
+                height: 250px;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th {
+                padding: 12px 10px;
+                font-size: 0.8rem;
+            }
+
+            td {
+                padding: 12px 10px;
+                font-size: 0.85rem;
+            }
+
+            .best-practices {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .practice-card {
+                padding: 20px;
+            }
+
+            .practice-number {
                 font-size: 1.5rem;
             }
 
-            th, td {
-                padding: 12px;
+            .practice-title {
+                font-size: 1.1rem;
+            }
+
+            .practice-desc {
                 font-size: 0.9rem;
+            }
+
+            .highlight {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+
+            .highlight strong {
+                font-size: 1rem;
+            }
+
+            .footer {
+                padding: 25px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            th, td {
+                padding: 10px 8px;
+                font-size: 0.8rem;
+            }
+
+            .chart-wrapper {
+                height: 200px;
             }
         }
     </style>
@@ -219,7 +322,7 @@
                     </div>
                 </div>
 
-                <table>
+                <div class="table-wrapper"><table>
                     <thead>
                         <tr>
                             <th>Time Slot</th>
@@ -254,7 +357,7 @@
                             <td><strong style="color: #2563eb;">Customize</strong></td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
             </div>
 
             <!-- Content Strategy Section -->
@@ -267,7 +370,7 @@
                     </div>
                 </div>
 
-                <table>
+                <div class="table-wrapper"><table>
                     <thead>
                         <tr>
                             <th>Content Type</th>
@@ -302,14 +405,14 @@
                             <td><strong style="color: #d97706;">Very High</strong></td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
             </div>
 
             <!-- Caption Strategy -->
             <div class="section">
                 <h2 class="section-title">✍️ Caption Best Practices</h2>
                 
-                <table>
+                <div class="table-wrapper"><table>
                     <thead>
                         <tr>
                             <th>Element</th>
@@ -349,7 +452,7 @@
                             <td>"Send me 'Payment Plan' and I'll share the complete breakdown for this project" OR "Comment your budget range below"</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
 
                 <div class="highlight">
                     <strong>⚠️ Important:</strong> Some accounts now limit hashtags. Keep it to 3 maximum for better reach and to avoid restrictions.
@@ -436,7 +539,7 @@
             <div class="section">
                 <h2 class="section-title">⛔ Common Mistakes to Avoid</h2>
                 
-                <table>
+                <div class="table-wrapper"><table>
                     <thead>
                         <tr>
                             <th>Mistake</th>
@@ -471,7 +574,7 @@
                             <td>Weekly review of performance data</td>
                         </tr>
                     </tbody>
-                </table>
+                </table></div>
             </div>
         </div>
 
